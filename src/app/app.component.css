@@ -44,12 +44,12 @@ main {
   left: 13%;
 }
 
-.dashboard,
-.calculator {
+.sorteador,
+.tabela-alunos {
   padding: 1em;
 }
 
-.dashboard {
+.sorteador {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -64,6 +64,6 @@ main {
   border-radius: 2vh;
 }
 
-.calculator {
+.tabela-alunos {
   flex: 2;
 }
