@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoteadorComponent implements OnInit {
 
+  loading = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +15,8 @@ export class SoteadorComponent implements OnInit {
 
   metodoTeste(texto) {
     console.log(texto);
+    this.loading = true;
+    setTimeout(() => { this.loading = false; }, 5000);
 
   }
 

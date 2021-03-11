@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { TabelaAlunosComponent } from './tabela-alunos/tabela-alunos.component';
 import { SoteadorComponent } from './soteador/soteador.component';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { CardModule } from 'primeng/card';
 
 
 
@@ -18,7 +22,11 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+    DialogModule,
+    ProgressSpinnerModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
