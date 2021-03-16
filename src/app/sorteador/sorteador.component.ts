@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SorteadorService } from './sorteador.service';
 
 @Component({
   selector: 'app-sorteador',
@@ -7,44 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SorteadorComponent implements OnInit {
 
-  arr = [{ id: 2, nome: "Gabriel Tigrão" }, { id: 11, nome: "Danilo" }, { id: 37, nome: "PH" }, { id: 42, nome: "Zero" }, { id: 84, nome: "Gabu" }];
+  listaAlunos = [];
 
   loading = false;
-  constructor() { }
+
+  constructor(private sorteadorService: SorteadorService) { }
 
   ngOnInit(): void {
+    this.listaAlunos = this.sorteadorService.listaAlunos;
     this.gerardorNumeroDaSorte();
   }
 
-  sortear(array) {
+  sortear(listaAlunos) {
     this.loading = true;
 
     setTimeout(() => {
       this.loading = false;
-
-      let currentIndex = array.length;
+      let currentIndex = listaAlunos.length;
       let randomIndex = Math.floor(Math.random() * currentIndex);
-      alert(`Parabéns #: ${array[randomIndex].nome}`);
+      alert(`Parabéns #: ${listaAlunos[randomIndex].nome}`);
 
-      let areta = this.arr.find(x => x.id === 11);
-      alert(areta.nome);
     }, 1000);
 
   }
 
   gerardorNumeroDaSorte() {
-    let numerosDaSorte = [];
-    for (let index = 0; index < 50; index++) {
-      let numeroDaSorte = this.geradorNumero();
-      let numero = numerosDaSorte.find(x => x === numeroDaSorte);
-
-
-      console.log();
+    for (let index = 0; index < this.listaAlunos.length; index++) {
+      this.listaAlunos[index].id = this.sorteadorService.geradorNumerosDaSorte();
     }
-  }
-
-  geradorNumero(): number {
-    return Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10);
   }
 
 }
