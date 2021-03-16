@@ -22,7 +22,7 @@ export class SorteadorComponent implements OnInit {
     setTimeout(() => {
       this.sorteadorService.sortear().subscribe(aluno => {
         this.loading = false;
-        alert(`Parabéns #: ${aluno.nome}`);
+        alert(`Parabéns ${aluno.id}: ${aluno.nome}`);
       });
     }, 5000);
   }

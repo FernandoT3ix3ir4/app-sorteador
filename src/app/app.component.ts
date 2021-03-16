@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SorteadorService } from './sorteador/sorteador.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  val2: number = 3;
+  constructor(private sorteadorService: SorteadorService) {
+    this.sorteadorService.obterListaALunos().then(alunos => { this.sorteadorService.listaAlunos = alunos });
+
+  }
 }

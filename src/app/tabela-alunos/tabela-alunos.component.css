@@ -11,3 +11,9 @@
   );
   border-radius: 2vh;
 }
+
+.posicionamento {
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}

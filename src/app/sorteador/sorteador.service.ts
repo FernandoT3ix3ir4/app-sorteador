@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Aluno } from '../tabela-alunos/aluno.model';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,7 +14,7 @@ export class SorteadorService {
   listaAlunos: Aluno[];
 
   constructor(private http: HttpClient) {
-    this.obterListaALunos().then(alunos => { this.listaAlunos = alunos });
+
   }
 
 
@@ -32,7 +32,8 @@ export class SorteadorService {
   }
 
   obterListaALunos() {
-    return this.http.get<Aluno[]>('assets/alunos.json').toPromise()
+    return this.http.get<Aluno[]>('assets/alunos.json')
+      .toPromise()
       .then(data => { return data; });;
   }
 
@@ -43,7 +44,6 @@ export class SorteadorService {
 
     if (!this.listaAlunos[randomIndex].sorteado) {
       this.listaAlunos[randomIndex].sorteado = true;
-      console.log(this.listaAlunos.filter(aluno => aluno.sorteado === true));
 
       return of(this.listaAlunos[randomIndex]);
     }
