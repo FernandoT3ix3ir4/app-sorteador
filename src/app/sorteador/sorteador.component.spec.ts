@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SorteadorComponent } from './sorteador.component';
 
-describe('SoteadorComponent', () => {
+describe('SorteadorComponent', () => {
   let component: SorteadorComponent;
   let fixture: ComponentFixture<SorteadorComponent>;
 

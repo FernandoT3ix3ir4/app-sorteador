@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-soteador',
+  selector: 'app-sorteador',
   templateUrl: './sorteador.component.html',
   styleUrls: ['./sorteador.component.css']
 })
@@ -46,7 +46,5 @@ export class SorteadorComponent implements OnInit {
   geradorNumero(): number {
     return Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10);
   }
-
-
 
 }
