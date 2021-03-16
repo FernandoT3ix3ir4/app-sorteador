@@ -1,14 +1,15 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TabelaAlunosComponent } from './tabela-alunos/tabela-alunos.component';
 import { SoteadorComponent } from './soteador/soteador.component';
+
 import { ButtonModule } from 'primeng/button';
-import { TableModule } from 'primeng/table';
-import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 
 
@@ -22,9 +23,9 @@ import { CardModule } from 'primeng/card';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     ButtonModule,
     TableModule,
-    DialogModule,
     ProgressSpinnerModule,
     CardModule
   ],
