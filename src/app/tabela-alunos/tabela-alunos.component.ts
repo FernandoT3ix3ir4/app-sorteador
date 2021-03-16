@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, } from '@angular/core';
 import { SorteadorService } from '../sorteador/sorteador.service';
 import { Aluno } from './aluno.model';
 
@@ -7,19 +7,13 @@ import { Aluno } from './aluno.model';
   templateUrl: './tabela-alunos.component.html',
   styleUrls: ['./tabela-alunos.component.css']
 })
-export class TabelaAlunosComponent implements OnInit {
+export class TabelaAlunosComponent {
 
   listaAlunos: Aluno[];
 
   loading = false;
 
-  constructor(private sorteadorService: SorteadorService) { }
-
-  ngOnInit(): void {
-    this.sorteadorService.obterListaALunos().then(alunos => { this.sorteadorService.listaAlunos = alunos });
-    this.listaAlunos = this.sorteadorService.listaAlunos;
-
-  }
+  constructor(public sorteadorService: SorteadorService) { }
 
 
   gerarNumerosDaSorte() {
@@ -30,7 +24,6 @@ export class TabelaAlunosComponent implements OnInit {
     });
 
     this.loading = false;
-    this.ngOnInit();
   }
 
 

@@ -14,7 +14,7 @@ export class SorteadorService {
   listaAlunos: Aluno[];
 
   constructor(private http: HttpClient) {
-
+    this.obterListaALunos().then(alunos => { this.listaAlunos = alunos });
   }
 
 
@@ -44,7 +44,7 @@ export class SorteadorService {
 
     if (!this.listaAlunos[randomIndex].sorteado) {
       this.listaAlunos[randomIndex].sorteado = true;
-
+      this.listaAlunos = [...this.listaAlunos];
       return of(this.listaAlunos[randomIndex]);
     }
 

@@ -3,105 +3,107 @@
     pButton
     type="button"
     label="Gerar Números da Sorte"
-    class=" p-button-rounded p-button-lg"
+    class="p-button-rounded p-button-lg"
     (click)="gerarNumerosDaSorte()"
   ></button>
 
-  <div><br/></div>
+  <div><br /></div>
 
   <p-table
-  #dt
-  [value]="listaAlunos"
-  dataKey="id"
-  styleClass="p-datatable-customers"
-  [rowHover]="true"
-  [rows]="15"
-  [showCurrentPageReport]="true"
-  [loading]="loading"
-  [paginator]="true"
-  currentPageReportTemplate="{first} ao {last} de {totalRecords} alunos"
-  [filterDelay]="0"
-  [globalFilterFields]="['nome', 'id']"
->
-  <ng-template pTemplate="caption">
-    <div class="table-header">
-      Lista de Alunos
-      <span class="p-input-icon-right">
-        <i class="pi pi-search"></i>
-        <input
-          pInputText
-          type="text"
-          (input)="dt.filterGlobal($event.target.value, 'contains')"
-          placeholder="Busca de aluno"
-        />
-      </span>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="header">
-    <tr>
-      <th pSortableColumn="nome">
-        <div class="posicionamento">
-          Nome
-          <p-sortIcon field="nome"></p-sortIcon>
-          <p-columnFilter
+    #dt
+    [value]="sorteadorService.listaAlunos"
+    dataKey="id"
+    styleClass="p-datatable-customers"
+    [rowHover]="true"
+    [rows]="15"
+    [showCurrentPageReport]="true"
+    [loading]="loading"
+    [paginator]="true"
+    currentPageReportTemplate="{first} ao {last} de {totalRecords} alunos"
+    [filterDelay]="0"
+    [globalFilterFields]="['nome', 'id']"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-header">
+        Lista de Alunos
+        <span class="p-input-icon-right">
+          <i class="pi pi-search"></i>
+          <input
+            pInputText
             type="text"
-            field="nome"
-            display="menu"
-            class="p-ml-auto"
-          ></p-columnFilter>
-        </div>
-      </th>
-      <th pSortableColumn="id">
-        <div class="posicionamento">
-          Número da Sorte
-          <p-sortIcon field="id"></p-sortIcon>
-          <p-columnFilter
-            type="text"
-            field="id"
-            display="menu"
-            class="p-ml-auto"
-          ></p-columnFilter>
-        </div>
-      </th>
+            (input)="dt.filterGlobal($event.target.value, 'contains')"
+            placeholder="Busca de aluno"
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="nome">
+          <div class="posicionamento">
+            Nome
+            <p-sortIcon field="nome"></p-sortIcon>
+            <p-columnFilter
+              type="text"
+              field="nome"
+              display="menu"
+              class="p-ml-auto"
+            ></p-columnFilter>
+          </div>
+        </th>
+        <th pSortableColumn="id">
+          <div class="posicionamento">
+            Número da Sorte
+            <p-sortIcon field="id"></p-sortIcon>
+            <p-columnFilter
+              type="text"
+              field="id"
+              display="menu"
+              class="p-ml-auto"
+            ></p-columnFilter>
+          </div>
+        </th>
 
-      <th pSortableColumn="sorteado">
-        <div class="posicionamento">
-          Ganhadores
-          <p-sortIcon field="sorteado"></p-sortIcon>
-          <p-columnFilter
-            field="sorteado"
-            display="menu"
-            class="p-ml-auto"
-          ></p-columnFilter>
-        </div>
-      </th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-aluno>
-    <tr class="p-selectable-row">
-      <td>
-        <div class="posicionamento">
-          {{ aluno.nome }}
-        </div>
-      </td>
-      <td>
-        <div class="posicionamento">
-          {{ aluno.id }}
-        </div>
-      </td>
-      <td>
-        <div *ngIf="aluno.sorteado">
-          <img src="assets/medalha.jpg" width="32" style="vertical-align: middle" />
-        </div>
-      </td>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="emptymessage">
-    <tr>
-      <td colspan="8">Nenhum aluno encontrado</td>
-    </tr>
-  </ng-template>
-</p-table>
+        <th pSortableColumn="sorteado">
+          <div class="posicionamento">
+            Ganhadores
+            <p-sortIcon field="sorteado"></p-sortIcon>
+            <p-columnFilter
+              field="sorteado"
+              display="menu"
+              class="p-ml-auto"
+            ></p-columnFilter>
+          </div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-aluno>
+      <tr class="p-selectable-row">
+        <td>
+          <div class="posicionamento">
+            {{ aluno.nome }}
+          </div>
+        </td>
+        <td>
+          <div class="posicionamento">
+            {{ aluno.id }}
+          </div>
+        </td>
+        <td>
+          <div *ngIf="aluno.sorteado" class="posicionamento">
+            <img
+              src="assets/medalha.jpg"
+              width="32"
+              style="vertical-align: middle"
+            />
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="8">Nenhum aluno encontrado</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </p-card>
-
-

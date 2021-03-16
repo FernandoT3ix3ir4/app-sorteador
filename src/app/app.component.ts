@@ -8,7 +8,7 @@ import { SorteadorService } from './sorteador/sorteador.service';
 })
 export class AppComponent {
   constructor(private sorteadorService: SorteadorService) {
-    this.sorteadorService.obterListaALunos().then(alunos => { this.sorteadorService.listaAlunos = alunos });
+
 
   }
 }
