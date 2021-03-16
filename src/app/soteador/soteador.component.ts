@@ -33,9 +33,18 @@ export class SoteadorComponent implements OnInit {
   }
 
   gerardorNumeroDaSorte() {
+    let numerosDaSorte = [];
     for (let index = 0; index < 50; index++) {
-      console.log(Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10));
+      let numeroDaSorte = this.geradorNumero();
+      let numero = numerosDaSorte.find(x => x === numeroDaSorte);
+
+
+      console.log();
     }
+  }
+
+  geradorNumero(): number {
+    return Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10);
   }
 
 
