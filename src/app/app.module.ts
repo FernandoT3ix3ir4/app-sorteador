@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TabelaAlunosComponent } from './tabela-alunos/tabela-alunos.component';
-import { SoteadorComponent } from './soteador/soteador.component';
+import { SorteadorComponent } from './sorteador/sorteador.component';
 
 import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -18,7 +18,7 @@ import { CardModule } from 'primeng/card';
   declarations: [
     AppComponent,
     TabelaAlunosComponent,
-    SoteadorComponent,
+    SorteadorComponent,
   ],
   imports: [
     BrowserModule,

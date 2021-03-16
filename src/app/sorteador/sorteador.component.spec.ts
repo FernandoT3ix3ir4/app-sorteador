@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SoteadorComponent } from './soteador.component';
+import { SorteadorComponent } from './sorteador.component';
 
 describe('SoteadorComponent', () => {
-  let component: SoteadorComponent;
-  let fixture: ComponentFixture<SoteadorComponent>;
+  let component: SorteadorComponent;
+  let fixture: ComponentFixture<SorteadorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SoteadorComponent ]
+      declarations: [SorteadorComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SoteadorComponent);
+    fixture = TestBed.createComponent(SorteadorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

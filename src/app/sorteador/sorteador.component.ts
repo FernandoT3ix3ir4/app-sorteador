@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-soteador',
-  templateUrl: './soteador.component.html',
-  styleUrls: ['./soteador.component.css']
+  templateUrl: './sorteador.component.html',
+  styleUrls: ['./sorteador.component.css']
 })
-export class SoteadorComponent implements OnInit {
+export class SorteadorComponent implements OnInit {
 
   arr = [{ id: 2, nome: "Gabriel Tigrão" }, { id: 11, nome: "Danilo" }, { id: 37, nome: "PH" }, { id: 42, nome: "Zero" }, { id: 84, nome: "Gabu" }];
 
