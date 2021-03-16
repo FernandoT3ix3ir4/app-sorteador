@@ -20,9 +20,10 @@ export class SorteadorService {
 
 
   geradorNumerosDaSorte(): number {
-    let numeroDaSorte = Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10);
 
-    if (!this.numerosDaSorte.includes(numeroDaSorte) && numeroDaSorte > 9) {
+    let numeroDaSorte = Math.floor(Math.random() * 100 + 1);
+
+    if (numeroDaSorte && !this.numerosDaSorte.includes(numeroDaSorte) && numeroDaSorte > 9) {
       this.numerosDaSorte.push(numeroDaSorte)
       return numeroDaSorte;
     }
@@ -37,7 +38,16 @@ export class SorteadorService {
 
   sortear(): Observable<Aluno> {
     let currentIndex = this.listaAlunos.length;
+
     let randomIndex = Math.floor(Math.random() * currentIndex);
-    return of(this.listaAlunos[randomIndex]);
+
+    if (!this.listaAlunos[randomIndex].sorteado) {
+      this.listaAlunos[randomIndex].sorteado = true;
+      console.log(this.listaAlunos.filter(aluno => aluno.sorteado === true));
+
+      return of(this.listaAlunos[randomIndex]);
+    }
+
+    this.sortear();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SorteadorService } from '../sorteador/sorteador.service';
 
 @Component({
   selector: 'app-tabela-alunos',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabelaAlunosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sorteadorService: SorteadorService) { }
 
   ngOnInit(): void {
+
+  }
+
+
+  gerarNumerosDaSorte() {
+    this.sorteadorService.numerosDaSorte = [];
+    this.sorteadorService.listaAlunos.forEach(aluno => {
+      aluno.id = this.sorteadorService.geradorNumerosDaSorte();
+    });
+
+    console.log(this.sorteadorService.listaAlunos);
   }
 
 }

@@ -14,7 +14,6 @@ export class SorteadorComponent implements OnInit {
   constructor(private sorteadorService: SorteadorService) { }
 
   ngOnInit(): void {
-    this.sorteadorService.geradorNumerosDaSorte();
   }
 
   sortear() {
