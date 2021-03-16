@@ -8,34 +8,25 @@ import { SorteadorService } from './sorteador.service';
 })
 export class SorteadorComponent implements OnInit {
 
-  listaAlunos = [];
 
   loading = false;
 
   constructor(private sorteadorService: SorteadorService) { }
 
   ngOnInit(): void {
-    this.listaAlunos = this.sorteadorService.listaAlunos;
-    this.gerardorNumeroDaSorte();
+    this.sorteadorService.geradorNumerosDaSorte();
   }
 
-  sortear(listaAlunos) {
+  sortear() {
     this.loading = true;
 
     setTimeout(() => {
-      this.loading = false;
-      let currentIndex = listaAlunos.length;
-      let randomIndex = Math.floor(Math.random() * currentIndex);
-      alert(`Parabéns #: ${listaAlunos[randomIndex].nome}`);
-
-    }, 1000);
-
+      this.sorteadorService.sortear().subscribe(aluno => {
+        this.loading = false;
+        alert(`Parabéns #: ${aluno.nome}`);
+      });
+    }, 5000);
   }
 
-  gerardorNumeroDaSorte() {
-    for (let index = 0; index < this.listaAlunos.length; index++) {
-      this.listaAlunos[index].id = this.sorteadorService.geradorNumerosDaSorte();
-    }
-  }
 
 }
