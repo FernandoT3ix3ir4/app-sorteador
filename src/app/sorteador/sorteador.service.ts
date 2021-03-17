@@ -36,7 +36,7 @@ export class SorteadorService {
   obterListaALunos() {
     return this.http.get<Aluno[]>('assets/alunos.json')
       .toPromise()
-      .then(data => { return data; });;
+      .then(data => { return data.sort((a, b) => (b.nome > a.nome ? -1 : 1)); });
   }
 
   sortear(): Observable<Aluno> {
