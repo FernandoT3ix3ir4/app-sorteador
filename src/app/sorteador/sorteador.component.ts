@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Aluno } from './../tabela-alunos/aluno.model';
+import { Component } from '@angular/core';
 import { SorteadorService } from './sorteador.service';
 
 @Component({
@@ -6,25 +7,39 @@ import { SorteadorService } from './sorteador.service';
   templateUrl: './sorteador.component.html',
   styleUrls: ['./sorteador.component.css']
 })
-export class SorteadorComponent implements OnInit {
+export class SorteadorComponent {
 
   loading = false;
 
+  mostrarPopUp = false;
+
+  aluno: Aluno = new Aluno;
+
+  header: string;
+
+
   constructor(public sorteadorService: SorteadorService) { }
 
-  ngOnInit(): void {
-  }
-
   sortear() {
+    this.header = 'Que rufem os tambores!!!'
     this.loading = true;
 
-    setTimeout(() => {
-      this.sorteadorService.sortear().subscribe(aluno => {
+    this.sorteadorService.sortear().subscribe(aluno => {
+      this.aluno = aluno;
+      this.mostrarPopUp = true;
+      setTimeout(() => {
+        this.header = `Parabéns ${aluno.nome}!!!`;
         this.loading = false;
-        alert(`Parabéns ${aluno.id}: ${aluno.nome}`);
-      });
-    }, 500);
+      }, 5000);
+    });
   }
 
 
+  desabilitarBotaoSorteio(): boolean {
+    return this.sorteadorService.numerosDaSorte.length === 0;
+  }
+
+  fecharDialog() {
+    this.mostrarPopUp = false;
+  }
 }

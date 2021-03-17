@@ -66,7 +66,5 @@ export class SorteadorService {
 
     this.tresUltimosGanhadores.unshift(this.listaAlunos[randomIndex]);
 
-    console.log(this.tresUltimosGanhadores);
-
   }
 }

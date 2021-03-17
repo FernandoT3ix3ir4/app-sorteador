@@ -42,7 +42,7 @@
     </ng-template>
     <ng-template pTemplate="header">
       <tr>
-        <th pSortableColumn="nome">
+        <th pSortableColumn="nome" colspan="3">
           <div class="posicionamento">
             Nome
             <p-sortIcon field="nome"></p-sortIcon>
@@ -54,7 +54,7 @@
             ></p-columnFilter>
           </div>
         </th>
-        <th pSortableColumn="id">
+        <th pSortableColumn="id" colspan="3">
           <div class="posicionamento">
             Número da Sorte
             <p-sortIcon field="id"></p-sortIcon>
@@ -67,7 +67,7 @@
           </div>
         </th>
 
-        <th pSortableColumn="sorteado" aria-sort="descending" class="p-sortable-column p-highlight">
+        <th pSortableColumn="sorteado" aria-sort="descending" class="p-sortable-column p-highlight" colspan="3">
           <div class="posicionamento">
             Ganhadores
             <p-sortIcon field="sorteado"></p-sortIcon>
@@ -82,20 +82,20 @@
     </ng-template>
     <ng-template pTemplate="body" let-aluno>
       <tr class="p-selectable-row">
-        <td>
+        <td colspan="3">
           <div class="posicionamento">
             {{ aluno.nome }}
           </div>
         </td>
-        <td>
+        <td colspan="3">
           <div class="posicionamento">
             {{ aluno.id }}
           </div>
         </td>
-        <td>
+        <td colspan="3">
           <div *ngIf="aluno.sorteado" class="posicionamento">
             <img
-              src="assets/medalha.jpg"
+              src="assets/medalha.png"
               width="32"
               style="vertical-align: middle"
             />
@@ -105,7 +105,7 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
       <tr>
-        <td colspan="8">Nenhum aluno encontrado</td>
+        <td colspan="9">Nenhum aluno encontrado</td>
       </tr>
     </ng-template>
   </p-table>

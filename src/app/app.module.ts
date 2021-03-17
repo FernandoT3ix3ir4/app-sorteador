@@ -11,6 +11,7 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
 
 
 
@@ -27,7 +28,8 @@ import { CardModule } from 'primeng/card';
     ButtonModule,
     TableModule,
     ProgressSpinnerModule,
-    CardModule
+    CardModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

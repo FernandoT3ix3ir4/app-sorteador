@@ -1,21 +1,107 @@
-<div *ngIf="!loading">
+<!-- <p-blockUI [blocked]="mostrarPopUp" [baseZIndex]="9999" ></p-blockUI> -->
+
+<div>
   <button
     pButton
     type="button"
     label="SORTEAR"
     class="p-button-rounded p-button-lg"
     (click)="sortear()"
+    [disabled]="desabilitarBotaoSorteio()"
   ></button>
-
-
+  <div><br /></div>
+  <p-table
+    #dt
+    [value]="sorteadorService.tresUltimosGanhadores"
+    dataKey="id"
+    styleClass="p-datatable-customers"
+    [rowHover]="true"
+    [rows]="3"
+    [loading]="loading"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-header">Três Últimos Ganhadores</div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th colspan="3">
+          <div class="posicionamento">Nome</div>
+        </th>
+        <th colspan="3">
+          <div class="posicionamento">Número da Sorte</div>
+        </th>
+        <th colspan="3">
+          <div class="posicionamento">Ganhadores</div>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-aluno>
+      <tr class="p-selectable-row">
+        <td colspan="3">
+          <div class="posicionamento">
+            {{ aluno.nome }}
+          </div>
+        </td>
+        <td colspan="3">
+          <div class="posicionamento">
+            {{ aluno.id }}
+          </div>
+        </td>
+        <td colspan="3">
+          <div *ngIf="aluno.sorteado" class="posicionamento">
+            <img
+              src="assets/medalha.png"
+              width="32"
+              style="vertical-align: middle"
+            />
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="9">Por enquanto nenhum ganhador</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
 
-<div *ngIf="loading">
-  <p-progressSpinner
-    [style]="{ width: '50px', height: '50px' }"
-    styleClass="custom-spinner"
-    strokeWidth="8"
-    fill="#EEEEEE"
-    animationDuration=".5s"
-  ></p-progressSpinner>
-</div>
+<p-dialog
+  [(visible)]="mostrarPopUp"
+  [breakpoints]="{ '960px': '75vw' }"
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="false"
+>
+  <ng-template pTemplate="header">
+    <h1>{{ header }}</h1>
+  </ng-template>
+  <div *ngIf="loading">
+    <p-progressSpinner
+      [style]="{ width: '50px', height: '50px' }"
+      styleClass="custom-spinner"
+      strokeWidth="8"
+      fill="#EEEEEE"
+      animationDuration=".5s"
+    ></p-progressSpinner>
+  </div>
+  <div *ngIf="!loading">
+    <div class="posicionamento">
+      <img src="assets/medalha.png" style="vertical-align: middle" />
+
+    </div>
+    <h1 style="color: red">O seu número {{ aluno.id }} foi sorteado!!!</h1>
+  </div>
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      type="button"
+      (click)="mostrarPopUp = false"
+      label="Ok"
+      styleClass="p-button-ok"
+      [disabled]="loading"
+    ></button>
+  </ng-template>
+</p-dialog>
