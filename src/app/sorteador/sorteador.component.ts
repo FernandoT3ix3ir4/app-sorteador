@@ -8,10 +8,9 @@ import { SorteadorService } from './sorteador.service';
 })
 export class SorteadorComponent implements OnInit {
 
-
   loading = false;
 
-  constructor(private sorteadorService: SorteadorService) { }
+  constructor(public sorteadorService: SorteadorService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +23,7 @@ export class SorteadorComponent implements OnInit {
         this.loading = false;
         alert(`Parabéns ${aluno.id}: ${aluno.nome}`);
       });
-    }, 5000);
+    }, 500);
   }
 
 

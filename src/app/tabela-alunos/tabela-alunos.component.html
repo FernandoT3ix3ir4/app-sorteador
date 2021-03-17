@@ -15,13 +15,16 @@
     dataKey="id"
     styleClass="p-datatable-customers"
     [rowHover]="true"
-    [rows]="15"
+    [rows]="10"
     [showCurrentPageReport]="true"
     [loading]="loading"
     [paginator]="true"
     currentPageReportTemplate="{first} ao {last} de {totalRecords} alunos"
     [filterDelay]="0"
     [globalFilterFields]="['nome', 'id']"
+    sortField="sorteado" [sortOrder]="-1"
+    [rowsPerPageOptions]="[10,100]"
+
   >
     <ng-template pTemplate="caption">
       <div class="table-header">
@@ -64,7 +67,7 @@
           </div>
         </th>
 
-        <th pSortableColumn="sorteado">
+        <th pSortableColumn="sorteado" aria-sort="descending" class="p-sortable-column p-highlight">
           <div class="posicionamento">
             Ganhadores
             <p-sortIcon field="sorteado"></p-sortIcon>

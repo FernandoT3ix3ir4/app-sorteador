@@ -13,6 +13,8 @@ export class SorteadorService {
 
   listaAlunos: Aluno[];
 
+  tresUltimosGanhadores: Aluno[] = [];
+
   constructor(private http: HttpClient) {
     this.obterListaALunos().then(alunos => { this.listaAlunos = alunos });
   }
@@ -45,9 +47,26 @@ export class SorteadorService {
     if (!this.listaAlunos[randomIndex].sorteado) {
       this.listaAlunos[randomIndex].sorteado = true;
       this.listaAlunos = [...this.listaAlunos];
+
+      this.preencherTresUltimosGanhadores(randomIndex);
+
+
       return of(this.listaAlunos[randomIndex]);
     }
 
-    this.sortear();
+    return this.sortear();
+  }
+
+
+
+  private preencherTresUltimosGanhadores(randomIndex: number) {
+    if (this.tresUltimosGanhadores.length === 3) {
+      this.tresUltimosGanhadores.pop();
+    }
+
+    this.tresUltimosGanhadores.unshift(this.listaAlunos[randomIndex]);
+
+    console.log(this.tresUltimosGanhadores);
+
   }
 }
