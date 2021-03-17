@@ -1,6 +1,6 @@
 <!-- <p-blockUI [blocked]="mostrarPopUp" [baseZIndex]="9999" ></p-blockUI> -->
 
-<div>
+<div class="p-grid">
   <button
     pButton
     type="button"
@@ -14,10 +14,11 @@
     #dt
     [value]="sorteadorService.tresUltimosGanhadores"
     dataKey="id"
-    styleClass="p-datatable-customers"
+    styleClass="p-datatable-responsive-demo"
     [rowHover]="true"
     [rows]="3"
     [loading]="loading"
+    class="p-col"
   >
     <ng-template pTemplate="caption">
       <div class="table-header">Três Últimos Ganhadores</div>
@@ -74,10 +75,12 @@
   [draggable]="false"
   [resizable]="false"
   [closable]="false"
+  class="p-col"
 >
   <ng-template pTemplate="header">
     <h1>{{ header }}</h1>
   </ng-template>
+
   <div *ngIf="loading">
     <p-progressSpinner
       [style]="{ width: '50px', height: '50px' }"
@@ -87,13 +90,14 @@
       animationDuration=".5s"
     ></p-progressSpinner>
   </div>
-  <div *ngIf="!loading">
-    <div class="posicionamento">
-      <img src="assets/medalha.png" style="vertical-align: middle" />
 
+  <div *ngIf="!loading">
+    <div class="posicionamento p-col">
+      <img src="assets/medalha.png" style="vertical-align: middle; width: 30%; height: 30%" />
     </div>
     <h1 style="color: red">O seu número {{ aluno.id }} foi sorteado!!!</h1>
   </div>
+
   <ng-template pTemplate="footer">
     <button
       pButton

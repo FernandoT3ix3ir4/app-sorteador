@@ -13,9 +13,9 @@
     #dt
     [value]="sorteadorService.listaAlunos"
     dataKey="id"
-    styleClass="p-datatable-customers"
+    styleClass="p-datatable-responsive-demo"
     [rowHover]="true"
-    [rows]="10"
+    [rows]="3"
     [showCurrentPageReport]="true"
     [loading]="loading"
     [paginator]="true"
@@ -23,7 +23,6 @@
     [filterDelay]="0"
     [globalFilterFields]="['nome', 'id']"
     sortField="sorteado" [sortOrder]="-1"
-    [rowsPerPageOptions]="[10,100]"
 
   >
     <ng-template pTemplate="caption">
