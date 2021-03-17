@@ -36,7 +36,7 @@ export class SorteadorComponent {
 
 
   desabilitarBotaoSorteio(): boolean {
-    return this.sorteadorService.numerosDaSorte.length === 0;
+    return this.sorteadorService.numerosDaSorte.length === 0 || this.mostrarPopUp;
   }
 
   fecharDialog() {
