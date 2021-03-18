@@ -45,26 +45,25 @@ export class SorteadorService {
     let randomIndex = Math.floor(Math.random() * currentIndex);
 
     if (!this.listaAlunos[randomIndex].sorteado) {
-      this.listaAlunos[randomIndex].sorteado = true;
-      this.listaAlunos = [...this.listaAlunos];
-
-      this.preencherTresUltimosGanhadores(randomIndex);
-
-
       return of(this.listaAlunos[randomIndex]);
     }
 
     return this.sortear();
   }
 
+  marcarGanhador(ganhador: Aluno) {
+    this.listaAlunos.find(aluno => aluno.id === ganhador.id).sorteado = true;
+    this.listaAlunos = [...this.listaAlunos];
+
+  }
 
 
-  private preencherTresUltimosGanhadores(randomIndex: number) {
+  preencherTresUltimosGanhadores(ultimoGanhador: Aluno) {
     if (this.tresUltimosGanhadores.length === 3) {
       this.tresUltimosGanhadores.pop();
     }
 
-    this.tresUltimosGanhadores.unshift(this.listaAlunos[randomIndex]);
+    this.tresUltimosGanhadores.unshift(this.listaAlunos.find(aluno => aluno.id === ultimoGanhador.id));
 
   }
 }

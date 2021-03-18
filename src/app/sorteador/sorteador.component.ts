@@ -40,6 +40,8 @@ export class SorteadorComponent {
   }
 
   fecharDialog() {
+    this.sorteadorService.marcarGanhador(this.aluno);
+    this.sorteadorService.preencherTresUltimosGanhadores(this.aluno);
     this.mostrarPopUp = false;
   }
 }
