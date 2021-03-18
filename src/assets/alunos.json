@@ -1,234 +1,292 @@
 [
   {
     "professora": "THAYS",
-    "nome": "Adryan Cardoso Ribeiro"
+    "nome": "Adryan Cardoso Ribeiro",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Ana Karoline do Santos"
+    "nome": "Ana Karoline do Santos",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Caifas Sousa de Godoi"
+    "nome": "Caifas Sousa de Godoi",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Derick Ryan Gonçalves dos Santos"
+    "nome": "Derick Ryan Gonçalves dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Diego Cardoso Brochado da Silva"
+    "nome": "Diego Cardoso Brochado da Silva",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Gilberto Gomes Moreira Junior"
+    "nome": "Gilberto Gomes Moreira Junior",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Giulianna Tauany Silva Santos"
+    "nome": "Giulianna Tauany Silva Santos",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Gustavo de Jesus da Silva"
+    "nome": "Gustavo de Jesus da Silva",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Hitalo sousa dos Santos"
+    "nome": "Hitalo sousa dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Jhennifer Rodrigues Ferreira"
+    "nome": "Jhennifer Rodrigues Ferreira",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Jhonny Silva Dias"
+    "nome": "Jhonny Silva Dias",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Júlia Beatriz Matos da Silva"
+    "nome": "Júlia Beatriz Matos da Silva",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Kaio Apolo Silva dos Santos"
+    "nome": "Kaio Apolo Silva dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Letícya do Santos Soares"
+    "nome": "Letícya do Santos Soares",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Luccas Davy Matias da Silva"
+    "nome": "Luccas Davy Matias da Silva",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Luna Cristina sa Costa Nunes"
+    "nome": "Luna Cristina sa Costa Nunes",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Maria Eduarda da Silva Souza"
+    "nome": "Maria Eduarda da Silva Souza",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Maria Eduarda de Aguiar Santos"
+    "nome": "Maria Eduarda de Aguiar Santos",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Matheus Medeiros dos Santos "
+    "nome": "Matheus Medeiros dos Santos ",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Miguel de Oliveira Silvestre"
+    "nome": "Miguel de Oliveira Silvestre",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Mylena Dias da Silva"
+    "nome": "Mylena Dias da Silva",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Nicoly da Silva Gama"
+    "nome": "Nicoly da Silva Gama",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Raissa Gabrielly Rodrigues da Silva Machado"
+    "nome": "Raissa Gabrielly Rodrigues da Silva Machado",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Ruan Carlos Avelino Duarte"
+    "nome": "Ruan Carlos Avelino Duarte",
+    "genero": "MENINO"
   },
   {
     "professora": "THAYS",
-    "nome": "Rute Marques do Nascimento "
+    "nome": "Rute Marques do Nascimento ",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Sarah Veloso"
+    "nome": "Sarah Veloso",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Stefany Fernanda Pereira Costa"
+    "nome": "Stefany Fernanda Pereira Costa",
+    "genero": "MENINA"
   },
   {
     "professora": "THAYS",
-    "nome": "Yohana Baptista estevam"
+    "nome": "Yohana Baptista estevam",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Aguida da Silva Oliveira"
+    "nome": "Aguida da Silva Oliveira",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Arthur Nascimento Neves"
+    "nome": "Arthur Nascimento Neves",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Beatriz Oliveira Rosa da Silva"
+    "nome": "Beatriz Oliveira Rosa da Silva",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Brayan Paiva Papalia"
+    "nome": "Brayan Paiva Papalia",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Bruno Lohan Santos Verdu Rico"
+    "nome": "Bruno Lohan Santos Verdu Rico",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Danielly da Silva Senedezi Rezende"
+    "nome": "Danielly da Silva Senedezi Rezende",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Fagner Luiz dos Santos"
+    "nome": "Fagner Luiz dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Gabriele Silva de Oliveira"
+    "nome": "Gabriele Silva de Oliveira",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Isabela Silva Souza"
+    "nome": "Isabela Silva Souza",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Isabella Beatriz de Paula Silva"
+    "nome": "Isabella Beatriz de Paula Silva",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Jheniffer Mayara Augusto dos Santos"
+    "nome": "Jheniffer Mayara Augusto dos Santos",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "João Vitor Sousa Ferreira"
+    "nome": "João Vitor Sousa Ferreira",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Juan Gabriel Silva Ross"
+    "nome": "Juan Gabriel Silva Ross",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Kauany Conceicao Santos Rodrigues"
+    "nome": "Kauany Conceicao Santos Rodrigues",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Kelvyn Gabriel Araujo Coelho"
+    "nome": "Kelvyn Gabriel Araujo Coelho",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Ketellyn de Souza Fernandes"
+    "nome": "Ketellyn de Souza Fernandes",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Laryssa Adriana Santos Oliveira"
+    "nome": "Laryssa Adriana Santos Oliveira",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Maria Eduarda Bolhoes Bertolo"
+    "nome": "Maria Eduarda Bolhoes Bertolo",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Marya Eduarda de Sousa Sa"
+    "nome": "Marya Eduarda de Sousa Sa",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Mateus Evaristo dos Santos"
+    "nome": "Mateus Evaristo dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Mateus Goulart dos Santos"
+    "nome": "Mateus Goulart dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Mayra Gomes dos Santos"
+    "nome": "Mayra Gomes dos Santos",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Miria Rebecca Rossi Macena"
+    "nome": "Miria Rebecca Rossi Macena",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Nathan Patussi de Araujo"
+    "nome": "Nathan Patussi de Araujo",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Samarah Pereira de Oliveira"
+    "nome": "Samarah Pereira de Oliveira",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Tifany Vitoria dos Santos Gregorio"
+    "nome": "Tifany Vitoria dos Santos Gregorio",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Vitoria Kimberly dos Santos Silva Carlos"
+    "nome": "Vitoria Kimberly dos Santos Silva Carlos",
+    "genero": "MENINA"
   },
   {
     "professora": "OUTRA",
-    "nome": "Wellyngton Silva Luz"
+    "nome": "Wellyngton Silva Luz",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Willian Tiago Silva dos Santos"
+    "nome": "Willian Tiago Silva dos Santos",
+    "genero": "MENINO"
   },
   {
     "professora": "OUTRA",
-    "nome": "Yasmim Cardoso dos Santos"
+    "nome": "Yasmim Cardoso dos Santos",
+    "genero": "MENINA"
   }
 ]

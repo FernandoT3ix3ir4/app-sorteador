@@ -13,7 +13,7 @@ export class SorteadorService {
 
   listaAlunos: Aluno[];
 
-  tresUltimosGanhadores: Aluno[] = [];
+  ganhadores: Aluno[] = [];
 
   constructor(private http: HttpClient) {
     this.obterListaALunos().then(alunos => { this.listaAlunos = alunos });
@@ -44,26 +44,40 @@ export class SorteadorService {
 
     let randomIndex = Math.floor(Math.random() * currentIndex);
 
-    if (!this.listaAlunos[randomIndex].sorteado) {
+    if (this.decisorSorteio(randomIndex)) {
       return of(this.listaAlunos[randomIndex]);
     }
 
     return this.sortear();
   }
 
+  private decisorSorteio(randomIndex: number): boolean {
+    return !this.listaAlunos[randomIndex].sorteado &&
+      this.ganhadores
+        .filter(ganhador =>
+          ganhador.professora === this.listaAlunos[randomIndex].professora).length < 2 &&
+      this.ganhadores
+        .filter(ganhador =>
+          ganhador.professora === this.listaAlunos[randomIndex].professora &&
+          ganhador.genero === this.listaAlunos[randomIndex].genero).length == 0;
+  }
+
   marcarGanhador(ganhador: Aluno) {
     this.listaAlunos.find(aluno => aluno.id === ganhador.id).sorteado = true;
     this.listaAlunos = [...this.listaAlunos];
-
   }
 
 
-  preencherTresUltimosGanhadores(ultimoGanhador: Aluno) {
-    if (this.tresUltimosGanhadores.length === 4) {
-      this.tresUltimosGanhadores.pop();
+  preencherganhadores(ultimoGanhador: Aluno) {
+    if (this.ganhadores.length === 4) {
+      this.ganhadores.pop();
     }
 
-    this.tresUltimosGanhadores.unshift(this.listaAlunos.find(aluno => aluno.id === ultimoGanhador.id));
+    this.ganhadores.unshift(this.listaAlunos.find(aluno => aluno.id === ultimoGanhador.id));
+
+    if (this.ganhadores.length === 4) {
+      console.log(this.ganhadores);
+    }
 
   }
 }

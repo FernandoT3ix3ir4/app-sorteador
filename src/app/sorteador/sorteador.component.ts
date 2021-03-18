@@ -30,18 +30,19 @@ export class SorteadorComponent {
       setTimeout(() => {
         this.header = `Parabéns ${aluno.nome}!!!`;
         this.loading = false;
-      }, 5000);
+      }, 500);
     });
+
   }
 
 
   desabilitarBotaoSorteio(): boolean {
-    return this.sorteadorService.numerosDaSorte.length === 0 || this.mostrarPopUp;
+    return this.sorteadorService.numerosDaSorte.length === 0 || this.mostrarPopUp || this.sorteadorService.ganhadores.length === 4;
   }
 
   fecharDialog() {
     this.sorteadorService.marcarGanhador(this.aluno);
-    this.sorteadorService.preencherTresUltimosGanhadores(this.aluno);
+    this.sorteadorService.preencherganhadores(this.aluno);
     this.mostrarPopUp = false;
   }
 }

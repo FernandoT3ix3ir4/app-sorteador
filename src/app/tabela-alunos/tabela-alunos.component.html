@@ -27,8 +27,7 @@
           [virtualRowHeight]="34"
           [filterDelay]="0"
           [globalFilterFields]="['nome', 'id']"
-          sortField="sorteado"
-          [sortOrder]="-1"
+
         >
           <ng-template pTemplate="caption">
             <div class="table-header">
@@ -59,12 +58,7 @@
                 </div>
               </th>
 
-              <th
-                pSortableColumn="sorteado"
-                aria-sort="descending"
-                class="p-sortable-column p-highlight"
-                colspan="3"
-              >
+              <th pSortableColumn="sorteado" colspan="3">
                 <div class="posicionamento">
                   Ganhadores
                   <p-sortIcon field="sorteado"></p-sortIcon>
