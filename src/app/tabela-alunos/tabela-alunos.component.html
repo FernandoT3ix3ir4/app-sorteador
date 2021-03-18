@@ -20,11 +20,11 @@
           dataKey="id"
           styleClass="p-datatable-responsive-demo"
           [rowHover]="true"
-          [rows]="3"
-          [showCurrentPageReport]="true"
-          [loading]="loading"
-          [paginator]="true"
-          currentPageReportTemplate="{first} ao {last} de {totalRecords} alunos"
+          [scrollable]="true"
+          [rows]="100"
+          scrollHeight="250px"
+          [virtualScroll]="true"
+          [virtualRowHeight]="34"
           [filterDelay]="0"
           [globalFilterFields]="['nome', 'id']"
           sortField="sorteado"
@@ -42,36 +42,20 @@
                   placeholder="Busca de aluno"
                 />
               </span>
-
             </div>
           </ng-template>
           <ng-template pTemplate="header">
             <tr>
-              <th
-                pSortableColumn="nome"
-                colspan="3"
-              >
+              <th pSortableColumn="nome" colspan="3">
                 <div class="posicionamento">
                   Nome
                   <p-sortIcon field="nome"></p-sortIcon>
-                  <p-columnFilter
-                    type="text"
-                    field="nome"
-                    display="menu"
-                    class="p-ml-auto"
-                  ></p-columnFilter>
                 </div>
               </th>
               <th pSortableColumn="id" colspan="3">
                 <div class="posicionamento">
                   Número da Sorte
                   <p-sortIcon field="id"></p-sortIcon>
-                  <p-columnFilter
-                    type="text"
-                    field="id"
-                    display="menu"
-                    class="p-ml-auto"
-                  ></p-columnFilter>
                 </div>
               </th>
 
@@ -84,11 +68,6 @@
                 <div class="posicionamento">
                   Ganhadores
                   <p-sortIcon field="sorteado"></p-sortIcon>
-                  <p-columnFilter
-                    field="sorteado"
-                    display="menu"
-                    class="p-ml-auto"
-                  ></p-columnFilter>
                 </div>
               </th>
             </tr>

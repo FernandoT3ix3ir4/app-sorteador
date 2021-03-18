@@ -59,7 +59,7 @@ export class SorteadorService {
 
 
   preencherTresUltimosGanhadores(ultimoGanhador: Aluno) {
-    if (this.tresUltimosGanhadores.length === 3) {
+    if (this.tresUltimosGanhadores.length === 4) {
       this.tresUltimosGanhadores.pop();
     }
 
