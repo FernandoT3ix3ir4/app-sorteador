@@ -13,15 +13,15 @@ export class SorteadorComponent {
 
   mostrarPopUp = false;
 
-  aluno: Aluno = new Aluno;
+  aluno: Aluno = new Aluno();
 
   header: string;
 
 
   constructor(public sorteadorService: SorteadorService) { }
 
-  sortear() {
-    this.header = 'Que rufem os tambores!!!'
+  sortear(): void {
+    this.header = 'Que rufem os tambores!!!';
     this.loading = true;
 
     this.sorteadorService.sortear().subscribe(aluno => {
@@ -30,7 +30,7 @@ export class SorteadorComponent {
       setTimeout(() => {
         this.header = `Parabéns ${aluno.nome}!!!`;
         this.loading = false;
-      }, 500);
+      }, 5000);
     });
 
   }
@@ -40,7 +40,7 @@ export class SorteadorComponent {
     return this.sorteadorService.numerosDaSorte.length === 0 || this.mostrarPopUp || this.sorteadorService.ganhadores.length === 4;
   }
 
-  fecharDialog() {
+  fecharDialog(): void {
     this.sorteadorService.marcarGanhador(this.aluno);
     this.sorteadorService.preencherganhadores(this.aluno);
     this.mostrarPopUp = false;

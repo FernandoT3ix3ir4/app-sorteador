@@ -17,3 +17,9 @@
   justify-content: space-evenly;
   text-align: center;
 }
+
+.p-datatable.p-datatable-alunos.p-datatable-header {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1.5rem;
+}

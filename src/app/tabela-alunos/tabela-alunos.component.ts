@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { SorteadorService } from '../sorteador/sorteador.service';
 import { Aluno } from './aluno.model';
 
@@ -7,23 +7,44 @@ import { Aluno } from './aluno.model';
   templateUrl: './tabela-alunos.component.html',
   styleUrls: ['./tabela-alunos.component.css']
 })
-export class TabelaAlunosComponent {
+export class TabelaAlunosComponent implements OnInit {
 
-  listaAlunos: Aluno[];
+  listaDeAlunos: Aluno[];
 
   loading = false;
 
   constructor(public sorteadorService: SorteadorService) { }
 
+  ngOnInit(): void {
+    this.sorteadorService.obterListaALunos().then(alunos => {
+      this.listaDeAlunos = alunos;
+      this.sorteadorService.listaAlunos = alunos;
+    });
+  }
 
-  gerarNumerosDaSorte() {
+
+  gerarNumerosDaSorte(): void {
     this.loading = true;
     this.sorteadorService.numerosDaSorte = [];
-    this.sorteadorService.listaAlunos.forEach(aluno => {
-      aluno.id = this.sorteadorService.geradorNumerosDaSorte();
+    this.listaDeAlunos.forEach(aluno => {
+      if (aluno.elegivel) {
+        const alunoElegivel = aluno;
+        alunoElegivel.id = this.sorteadorService.geradorNumerosDaSorte();
+        this.sorteadorService.alunosElegiveis.push(alunoElegivel);
+      }
     });
 
     this.loading = false;
+  }
+
+  tornarTodosAlunosElegiveis(checkValue): void {
+    if (checkValue) {
+      this.sorteadorService.alunosElegiveis = [...this.listaDeAlunos];
+      this.sorteadorService.alunosElegiveis.forEach(aluno => aluno.elegivel = checkValue);
+
+    } else {
+      this.sorteadorService.alunosElegiveis = [];
+    }
   }
 
 

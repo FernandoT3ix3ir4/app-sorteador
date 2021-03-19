@@ -8,10 +8,12 @@ import { TabelaAlunosComponent } from './tabela-alunos/tabela-alunos.component';
 import { SorteadorComponent } from './sorteador/sorteador.component';
 
 import { ButtonModule } from 'primeng/button';
+import { CheckboxModule } from 'primeng/checkbox';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
+
 
 
 
@@ -25,11 +27,12 @@ import { DialogModule } from 'primeng/dialog';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    CheckboxModule,
     ButtonModule,
     TableModule,
     ProgressSpinnerModule,
     CardModule,
-    DialogModule
+    DialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,6 +5,7 @@ export class Aluno {
   sorteado?: boolean;
   professora?: ProfessoraEnum;
   genero?: GeneroEnum;
+  elegivel: boolean;
 }
 
 

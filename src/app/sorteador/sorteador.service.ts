@@ -13,67 +13,66 @@ export class SorteadorService {
 
   listaAlunos: Aluno[];
 
+  alunosElegiveis: Aluno[];
+
   ganhadores: Aluno[] = [];
 
   constructor(private http: HttpClient) {
-    this.obterListaALunos().then(alunos => { this.listaAlunos = alunos });
   }
-
-
 
   geradorNumerosDaSorte(): number {
 
-    let numeroDaSorte = Math.floor(Math.random() * 100 + 1);
+    const numeroDaSorte = Math.floor(Math.random() * 100 + 1);
 
     if (numeroDaSorte && !this.numerosDaSorte.includes(numeroDaSorte) && numeroDaSorte > 9) {
-      this.numerosDaSorte.push(numeroDaSorte)
+      this.numerosDaSorte.push(numeroDaSorte);
       return numeroDaSorte;
     }
 
     return this.geradorNumerosDaSorte();
   }
 
-  obterListaALunos() {
+  obterListaALunos(): Promise<Aluno[]> {
     return this.http.get<Aluno[]>('assets/alunos.json')
       .toPromise()
-      .then(data => { return data.sort((a, b) => (b.nome > a.nome ? -1 : 1)); });
+      .then(alunos => alunos.sort((a, b) => (b.nome > a.nome ? -1 : 1)));
   }
 
   sortear(): Observable<Aluno> {
-    let currentIndex = this.listaAlunos.length;
+    const currentIndex = this.alunosElegiveis.length;
 
-    let randomIndex = Math.floor(Math.random() * currentIndex);
+    const randomIndex = Math.floor(Math.random() * currentIndex);
 
     if (this.decisorSorteio(randomIndex)) {
-      return of(this.listaAlunos[randomIndex]);
+      return of(this.alunosElegiveis[randomIndex]);
     }
 
     return this.sortear();
   }
 
   private decisorSorteio(randomIndex: number): boolean {
-    return !this.listaAlunos[randomIndex].sorteado &&
+    return !this.alunosElegiveis[randomIndex].sorteado &&
       this.ganhadores
         .filter(ganhador =>
-          ganhador.professora === this.listaAlunos[randomIndex].professora).length < 2 &&
+          ganhador.professora === this.alunosElegiveis[randomIndex].professora).length < 2 &&
       this.ganhadores
         .filter(ganhador =>
-          ganhador.professora === this.listaAlunos[randomIndex].professora &&
-          ganhador.genero === this.listaAlunos[randomIndex].genero).length == 0;
+          ganhador.professora === this.alunosElegiveis[randomIndex].professora &&
+          ganhador.genero === this.alunosElegiveis[randomIndex].genero).length === 0;
   }
 
-  marcarGanhador(ganhador: Aluno) {
-    this.listaAlunos.find(aluno => aluno.id === ganhador.id).sorteado = true;
-    this.listaAlunos = [...this.listaAlunos];
+  marcarGanhador(ganhador: Aluno): void {
+    this.alunosElegiveis.find(aluno => aluno.id === ganhador.id).sorteado = true;
+    this.alunosElegiveis = [...this.alunosElegiveis];
   }
 
 
-  preencherganhadores(ultimoGanhador: Aluno) {
+  preencherganhadores(ultimoGanhador: Aluno): void {
     if (this.ganhadores.length === 4) {
       this.ganhadores.pop();
     }
 
-    this.ganhadores.unshift(this.listaAlunos.find(aluno => aluno.id === ultimoGanhador.id));
+    this.ganhadores.unshift(this.alunosElegiveis.find(aluno => aluno.id === ultimoGanhador.id));
 
     if (this.ganhadores.length === 4) {
       console.log(this.ganhadores);
