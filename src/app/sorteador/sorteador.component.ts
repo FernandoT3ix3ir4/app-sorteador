@@ -35,10 +35,9 @@ export class SorteadorComponent {
   }
 
   desabilitarBotaoSorteio(): boolean {
-    return this.sorteadorService.numerosDaSorte.length === 0 ||
+    return this.sorteadorService.numerosDaSorte.length <= 4 ||
       this.mostrarPopUp ||
-      this.sorteadorService.ganhadores.length === 4 ||
-      this.sorteadorService.ganhadores.length === this.sorteadorService.alunosElegiveis.length;
+      this.sorteadorService.ganhadores.length === 4;
   }
 
   fecharDialog(): void {

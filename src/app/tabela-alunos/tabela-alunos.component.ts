@@ -26,7 +26,7 @@ export class TabelaAlunosComponent implements OnInit {
     this.loading = true;
     this.sorteadorService.numerosDaSorte = [];
 
-    this.listaDeAlunos = [...this.sorteadorService.alunosElegiveis];
+    this.listaDeAlunos = [...this.sorteadorService.alunosParticipantes];
 
     this.listaDeAlunos.forEach(aluno => {
       aluno.id = this.sorteadorService.geradorNumerosDaSorte();
@@ -35,20 +35,20 @@ export class TabelaAlunosComponent implements OnInit {
     this.loading = false;
   }
 
-  tornarTodosAlunosElegiveis(checkValue): void {
-    this.sorteadorService.alunosElegiveis = JSON.parse(JSON.stringify(this.listaDeAlunos));
-    this.sorteadorService.alunosElegiveis.forEach(aluno => aluno.elegivel = checkValue);
+  tornarTodosalunosParticipantes(checkValue): void {
+    this.sorteadorService.alunosParticipantes = JSON.parse(JSON.stringify(this.listaDeAlunos));
+    this.sorteadorService.alunosParticipantes.forEach(aluno => aluno.elegivel = checkValue);
 
     if (!checkValue) {
       this.sorteadorService.numerosDaSorte = [];
-      this.sorteadorService.alunosElegiveis = [];
+      this.sorteadorService.alunosParticipantes = [];
       this.listaDeAlunos = JSON.parse(JSON.stringify(this.sorteadorService.listaAlunos));
     }
   }
 
   tornarAlunoElegivel(aluno: Aluno, checkValue: boolean): void {
     aluno.elegivel = checkValue;
-    this.sorteadorService.alunosElegiveis = this.listaDeAlunos.filter(aluno => aluno.elegivel);
+    this.sorteadorService.alunosParticipantes = this.listaDeAlunos.filter(aluno => aluno.elegivel);
   }
 
 }

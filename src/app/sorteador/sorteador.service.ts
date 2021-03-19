@@ -13,7 +13,7 @@ export class SorteadorService {
 
   listaAlunos: Aluno[];
 
-  alunosElegiveis: Aluno[] = [];
+  alunosParticipantes: Aluno[] = [];
 
   ganhadores: Aluno[] = [];
 
@@ -39,31 +39,31 @@ export class SorteadorService {
   }
 
   sortear(): Observable<Aluno> {
-    const currentIndex = this.alunosElegiveis.length;
+    const currentIndex = this.alunosParticipantes.length;
 
     const randomIndex = Math.floor(Math.random() * currentIndex);
 
     if (this.decisorSorteio(randomIndex)) {
-      return of(this.alunosElegiveis[randomIndex]);
+      return of(this.alunosParticipantes[randomIndex]);
     }
 
     return this.sortear();
   }
 
   private decisorSorteio(randomIndex: number): boolean {
-    return !this.alunosElegiveis[randomIndex].sorteado &&
+    return !this.alunosParticipantes[randomIndex].sorteado &&
       this.ganhadores
         .filter(ganhador =>
-          ganhador.professora === this.alunosElegiveis[randomIndex].professora).length < 2 &&
+          ganhador.professora === this.alunosParticipantes[randomIndex].professora).length < 2 &&
       this.ganhadores
         .filter(ganhador =>
-          ganhador.professora === this.alunosElegiveis[randomIndex].professora &&
-          ganhador.genero === this.alunosElegiveis[randomIndex].genero).length === 0;
+          ganhador.professora === this.alunosParticipantes[randomIndex].professora &&
+          ganhador.genero === this.alunosParticipantes[randomIndex].genero).length === 0;
   }
 
   marcarGanhador(ganhador: Aluno): void {
-    this.alunosElegiveis.find(aluno => aluno.id === ganhador.id).sorteado = true;
-    this.alunosElegiveis = [...this.alunosElegiveis];
+    this.alunosParticipantes.find(aluno => aluno.id === ganhador.id).sorteado = true;
+    this.alunosParticipantes = [...this.alunosParticipantes];
 
   }
 
@@ -73,7 +73,7 @@ export class SorteadorService {
       this.ganhadores.pop();
     }
 
-    this.ganhadores.unshift(this.alunosElegiveis.find(aluno => aluno.id === ultimoGanhador.id));
+    this.ganhadores.unshift(this.alunosParticipantes.find(aluno => aluno.id === ultimoGanhador.id));
 
     if (this.ganhadores.length === 4) {
       console.log(this.ganhadores);

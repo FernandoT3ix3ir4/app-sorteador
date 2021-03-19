@@ -10,7 +10,7 @@
           (click)="gerarNumerosDaSorte()"
           [disabled]="
 
-            sorteadorService.alunosElegiveis.length < 2
+            sorteadorService.alunosParticipantes.length < 2
           "
         ></button>
       </div>
@@ -21,7 +21,7 @@
           type="button"
           label="Desfazer"
           class="p-button-outlined p-button-info"
-          (click)="tornarTodosAlunosElegiveis(false)"
+          (click)="tornarTodosalunosParticipantes(false)"
         ></button>
       </div>
     </div>
@@ -30,7 +30,7 @@
       <p-table
         #dt
         [value]="listaDeAlunos"
-        [(selection)]="sorteadorService.alunosElegiveis"
+        [(selection)]="sorteadorService.alunosParticipantes"
         dataKey="nome"
         [scrollable]="true"
         scrollHeight="250px"
