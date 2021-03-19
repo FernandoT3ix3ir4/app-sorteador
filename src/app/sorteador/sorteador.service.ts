@@ -64,6 +64,7 @@ export class SorteadorService {
   marcarGanhador(ganhador: Aluno): void {
     this.alunosElegiveis.find(aluno => aluno.id === ganhador.id).sorteado = true;
     this.alunosElegiveis = [...this.alunosElegiveis];
+
   }
 
 

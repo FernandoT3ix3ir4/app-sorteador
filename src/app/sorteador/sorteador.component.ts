@@ -32,12 +32,13 @@ export class SorteadorComponent {
         this.loading = false;
       }, 5000);
     });
-
   }
 
-
   desabilitarBotaoSorteio(): boolean {
-    return this.sorteadorService.numerosDaSorte.length === 0 || this.mostrarPopUp || this.sorteadorService.ganhadores.length === 4;
+    return this.sorteadorService.numerosDaSorte.length === 0 ||
+      this.mostrarPopUp ||
+      this.sorteadorService.ganhadores.length === 4 ||
+      this.sorteadorService.ganhadores.length === this.sorteadorService.alunosElegiveis.length;
   }
 
   fecharDialog(): void {

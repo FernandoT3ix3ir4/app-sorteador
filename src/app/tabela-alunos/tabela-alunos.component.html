@@ -18,7 +18,7 @@
           #dt
           [value]="listaDeAlunos"
           [(selection)]="sorteadorService.alunosElegiveis"
-          dataKey="id"
+          dataKey="nome"
           [scrollable]="true"
           scrollHeight="250px"
           [virtualScroll]="true"
@@ -42,6 +42,9 @@
           </ng-template>
           <ng-template pTemplate="header">
             <tr>
+              <th style="width: 3rem">
+
+              </th>
               <th pSortableColumn="nome" colspan="3">
                 <div class="posicionamento">
                   Nome
@@ -55,7 +58,10 @@
                 </div>
               </th>
               <th colspan="3">
-                <div class="posicionamento">Aluno Elegível</div>
+                <div class="posicionamento">
+                  Aluno Participante
+                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </div>
               </th>
             </tr>
           </ng-template>
@@ -73,7 +79,7 @@
               </td>
               <td colspan="3">
                 <div class="posicionamento">
-                  <p-checkbox value="aluno.elegivel"></p-checkbox>
+                  <p-tableCheckbox [value]="aluno"></p-tableCheckbox>
                 </div>
               </td>
             </tr>
