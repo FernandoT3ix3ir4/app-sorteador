@@ -42,6 +42,7 @@ export class TabelaAlunosComponent implements OnInit {
     if (!checkValue) {
       this.sorteadorService.numerosDaSorte = [];
       this.sorteadorService.alunosParticipantes = [];
+      this.sorteadorService.ganhadores = [];
       this.listaDeAlunos = JSON.parse(JSON.stringify(this.sorteadorService.listaAlunos));
     }
   }
