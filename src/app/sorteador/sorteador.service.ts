@@ -13,7 +13,7 @@ export class SorteadorService {
 
   listaAlunos: Aluno[];
 
-  alunosElegiveis: Aluno[];
+  alunosElegiveis: Aluno[] = [];
 
   ganhadores: Aluno[] = [];
 

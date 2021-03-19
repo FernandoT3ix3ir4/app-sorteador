@@ -38,6 +38,12 @@ export class TabelaAlunosComponent implements OnInit {
   tornarTodosAlunosElegiveis(checkValue): void {
     this.sorteadorService.alunosElegiveis = JSON.parse(JSON.stringify(this.listaDeAlunos));
     this.sorteadorService.alunosElegiveis.forEach(aluno => aluno.elegivel = checkValue);
+
+    if (!checkValue) {
+      this.sorteadorService.numerosDaSorte = [];
+      this.sorteadorService.alunosElegiveis = [];
+      this.listaDeAlunos = JSON.parse(JSON.stringify(this.sorteadorService.listaAlunos));
+    }
   }
 
   tornarAlunoElegivel(aluno: Aluno, checkValue: boolean): void {
